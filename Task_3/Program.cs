@@ -9,11 +9,9 @@ int Prompt(string message)
     return int.Parse(Console.ReadLine());
 }
 
-int length = Prompt("Введите количество элементов массива: ");
-int min = Prompt("Введите минимальный порог случайных значений: ");
-int max = Prompt("Введите максимальный порог случайных значений: ");
 
-int[] CreateArray(int length)
+
+int[] CreateArray(int length, int min, int max)
 {
     int[] tempArray = new int[length];
     for (int i = 0; i < length; i++)
@@ -32,5 +30,9 @@ void printArray(int[] intArray)
     }
 }
 
+int length = Prompt("Введите количество элементов массива: ");
+int min = Prompt("Введите минимальный порог случайных значений: ");
+int max = Prompt("Введите максимальный порог случайных значений: ");
+
 System.Console.Write($"Массив длиной {length} элементов: ");
-printArray(CreateArray(length));
+printArray(CreateArray(length, min, max));
